@@ -1,0 +1,108 @@
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+
+class Information {
+private:
+	string name;
+	string phonenumber;
+
+public:
+	Information();
+	Information(string name, string phonenumber);
+
+
+
+	bool Check(const Information& contact, const string& name, const string& phonenumber) {
+		return (contact.name == name) && (contact.phonenumber == phonenumber);
+	}
+
+
+
+
+	int main() {
+
+		Information contact;
+		vector<Information>contacts;
+		cout << "*****" << "SWING 회원 정보 관리 프로그램" << "*****" << endl << endl;
+		cout << "1. 회원가입";
+		cout << "2. 로그인";
+		cout << "3. 회원 정보 수정";
+		cout << "4. 종료";
+
+		cout << "번호를 입력하세요 : ";
+
+		int a; // 입력받을 번호
+		int name;
+		cin >> a;
+
+		if (a == 1) {
+			cout << "***** 회원가입을 진행합니다 *****" << endl << endl;
+			cout << "이름을 입력하세요 : ";
+			cin >> contact.name;
+			cout << "전화번호를 입력하세요 : ";
+			cin >> contact.phonenumber;
+			contacts.push_back(contact);
+
+			if (Check(contacts.back(), contact.name, contact.phonenumber) == true) {
+				cout << "이미 등록된 정보입니다.";
+			}
+			else {
+				cout << "이름을 입력하세요 : ";
+				cin >> name;
+				cout << "전화번호를 입력하세요 : ";
+				cin >> phonenumber;
+			}
+
+		}
+		else if (a == 2) {
+
+			cout << "***** 로그인을 진행합니다 *****" << endl << endl;
+			cout << "이름을 입력하세요 : ";
+			cin >> contact.name;
+			cout << "전화번호를 입력하세요 : ";
+			cin >> contact.phonenumber;
+
+
+			if (Check(contacts.back(), contact.name, contact.phonenumber) == true) {
+				cout << "로그인이 완료되었습니다." << endl;
+				cout << "***** SWING " << contact.name << "님을 응원합니다 *****";
+			}
+			else {
+				cout << "회원정보가 일치하지않습니다." << endl;
+			}
+		}
+
+		else if (a == 3) {
+			cout << "***** 회원정보 수정을 진행합니다 *****" << endl << endl;
+			cout << "현재 회원 정보" << endl;
+			cout << "이름 : ";
+			cin >> contact.name;
+			cout << "전화번호";
+			cin >> contact.phonenumber;
+			if (Check(contacts.back(), contact.name, contact.phonenumber) == false) {
+				cout << "회원 정보가 일치 하지 않습니다." << endl;
+			}
+			else {
+				cout << "새로운 회원 정보 " << endl;
+				cout << "이름 : " << endl;
+				cin >> name;
+				cout << "전화번호 : " << endl;
+				cin >> phonenumber;
+
+				cout << "회원정보 수정이 완료되었습니다." << endl;
+
+			}
+		}
+		else if (a == 4) {
+			cout << "SWING 회원 정보 관리 프로그램을 종료합니다." << endl;
+		}
+
+		else {
+			cout << "정확한 번호를 입력해주세요.";
+		}
+
+	}
+	return 0;
+}
