@@ -1,111 +1,109 @@
-
-
 #include <iostream>
 #include <vector>
 #include <string>
 using namespace std;
 
 class Information {
-private:
-	string name;
-	string phonenumber;
-
+   
+   // string name;
+    //string phonenumber;
 public:
-	Information();
-	Information(string name, string phonenumber);
-
-
-
-	bool Check(const Information& contact, const string& name, const string& phonenumber) {
-		return (contact.name == name) && (contact.phonenumber == phonenumber);
-	}
-
-
-
-
-	int main() {
-
-		Information contact;
-		vector<Information>contacts;
-		cout << "*****" << "SWING È¸¿ø Á¤º¸ °ü¸® ÇÁ·Î±×·¥" << "*****" << endl << endl;
-		cout << "1. È¸¿ø°¡ÀÔ";
-		cout << "2. ·Î±×ÀÎ";
-		cout << "3. È¸¿ø Á¤º¸ ¼öÁ¤";
-		cout << "4. Á¾·á";
-
-		cout << "¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
-
-		int a; // ÀÔ·Â¹ÞÀ» ¹øÈ£
-		int name;
-		cin >> a;
-
-		if (a == 1) {
-			cout << "***** È¸¿ø°¡ÀÔÀ» ÁøÇàÇÕ´Ï´Ù *****" << endl << endl;
-			cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
-			cin >> contact.name;
-			cout << "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
-			cin >> contact.phonenumber;
-			contacts.push_back(contact);
-
-			if (Check(contacts.back(), contact.name, contact.phonenumber) == true) {
-				cout << "ÀÌ¹Ì µî·ÏµÈ Á¤º¸ÀÔ´Ï´Ù.";
-			}
-			else {
-				cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
-				cin >> name;
-				cout << "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
-				cin >> phonenumber;
-			}
-
-		}
-		else if (a == 2) {
-
-			cout << "***** ·Î±×ÀÎÀ» ÁøÇàÇÕ´Ï´Ù *****" << endl << endl;
-			cout << "ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ";
-			cin >> contact.name;
-			cout << "ÀüÈ­¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ";
-			cin >> contact.phonenumber;
-
-
-			if (Check(contacts.back(), contact.name, contact.phonenumber) == true) {
-				cout << "·Î±×ÀÎÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù." << endl;
-				cout << "***** SWING " << contact.name << "´ÔÀ» ÀÀ¿øÇÕ´Ï´Ù *****";
-			}
-			else {
-				cout << "È¸¿øÁ¤º¸°¡ ÀÏÄ¡ÇÏÁö¾Ê½À´Ï´Ù." << endl;
-			}
-		}
-
-		else if (a == 3) {
-			cout << "***** È¸¿øÁ¤º¸ ¼öÁ¤À» ÁøÇàÇÕ´Ï´Ù *****" << endl << endl;
-			cout << "ÇöÀç È¸¿ø Á¤º¸" << endl;
-			cout << "ÀÌ¸§ : ";
-			cin >> contact.name;
-			cout << "ÀüÈ­¹øÈ£";
-			cin >> contact.phonenumber;
-			if (Check(contacts.back(), contact.name, contact.phonenumber) == false) {
-				cout << "È¸¿ø Á¤º¸°¡ ÀÏÄ¡ ÇÏÁö ¾Ê½À´Ï´Ù." << endl;
-			}
-			else {
-				cout << "»õ·Î¿î È¸¿ø Á¤º¸ " << endl;
-				cout << "ÀÌ¸§ : " << endl;
-				cin >> name;
-				cout << "ÀüÈ­¹øÈ£ : " << endl;
-				cin >> phonenumber;
-
-				cout << "È¸¿øÁ¤º¸ ¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù." << endl;
-
-			}
-		}
-		else if (a == 4) {
-			cout << "SWING È¸¿ø Á¤º¸ °ü¸® ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù." << endl;
-		}
-
-		else {
-			cout << "Á¤È®ÇÑ ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.";
-		}
-
-	}
-	return 0;
+    string name, phonenumber;
+    int a;
+    Information();
+    Information(string name, string phonenumber);
+    bool Check(const Information& contact, const string& name, const string& phonenumber);
+};
+    
+bool Information::Check(const Information& contact, const string& name, const string& phonenumber) {
+        return (contact.name == name) && (contact.phonenumber == phonenumber);
 }
-		
+
+
+
+
+    int main() {
+
+        Information contact;
+        vector<Information>contacts;
+        cout << "*****" << "SWING íšŒì› ì •ë³´ ê´€ë¦¬ í”„ë¡œê·¸ëž¨" << "*****" << endl << endl;
+        cout << "1. íšŒì›ê°€ìž…";
+        cout << "2. ë¡œê·¸ì¸";
+        cout << "3. íšŒì› ì •ë³´ ìˆ˜ì •";
+        cout << "4. ì¢…ë£Œ";
+
+        cout << "ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ";
+
+        int a; // ìž…ë ¥ë°›ì„ ë²ˆí˜¸
+        int name, phonenumber;
+        cin >> a;
+
+        if (a == 1) {
+            cout << "***** íšŒì›ê°€ìž…ì„ ì§„í–‰í•©ë‹ˆë‹¤ *****" << endl << endl;
+            cout << "ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš” : ";
+            cin >> contact.name;
+            cout << "ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ";
+            cin >> contact.phonenumber;
+            contacts.push_back(contact);
+
+
+            if (contact.Check(contact, contact.name, contact.phonenumber) == true) {
+
+                cout << "ì´ë¯¸ ë“±ë¡ëœ ì •ë³´ìž…ë‹ˆë‹¤.";
+            }
+            else {
+                cout << "ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš” : ";
+                cin >> name;
+                cout << "ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ";
+                cin >> phonenumber;
+            }
+
+        }
+        else if (a == 2) {
+
+            cout << "***** ë¡œê·¸ì¸ì„ ì§„í–‰í•©ë‹ˆë‹¤ *****" << endl << endl;
+            cout << "ì´ë¦„ì„ ìž…ë ¥í•˜ì„¸ìš” : ";
+            cin >> contact.name;
+            cout << "ì „í™”ë²ˆí˜¸ë¥¼ ìž…ë ¥í•˜ì„¸ìš” : ";
+            cin >> contact.phonenumber;
+
+
+            if (contact.Check(contact, contact.name, contact.phonenumber) == true) {
+                cout << "ë¡œê·¸ì¸ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
+                cout << "***** SWING " << contact.name << "ë‹˜ì„ ì‘ì›í•©ë‹ˆë‹¤ *****";
+            }
+            else {
+                cout << "íšŒì›ì •ë³´ê°€ ì¼ì¹˜í•˜ì§€ì•ŠìŠµë‹ˆë‹¤." << endl;
+            }
+        }
+
+        else if (a == 3) {
+            cout << "***** íšŒì›ì •ë³´ ìˆ˜ì •ì„ ì§„í–‰í•©ë‹ˆë‹¤ *****" << endl << endl;
+            cout << "í˜„ìž¬ íšŒì› ì •ë³´" << endl;
+            cout << "ì´ë¦„ : ";
+            cin >> contact.name;
+            cout << "ì „í™”ë²ˆí˜¸";
+            cin >> contact.phonenumber;
+            if (contact.Check(contact, contact.name, contact.phonenumber) == false) {
+                cout << "íšŒì› ì •ë³´ê°€ ì¼ì¹˜ í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤." << endl;
+            }
+            else {
+                cout << "ìƒˆë¡œìš´ íšŒì› ì •ë³´ " << endl;
+                cout << "ì´ë¦„ : " << endl;
+                cin >> name;
+                cout << "ì „í™”ë²ˆí˜¸ : " << endl;
+                cin >> phonenumber;
+
+                cout << "íšŒì›ì •ë³´ ìˆ˜ì •ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤." << endl;
+
+            }
+        }
+        else if (a == 4) {
+            cout << "SWING íšŒì› ì •ë³´ ê´€ë¦¬ í”„ë¡œê·¸ëž¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤." << endl;
+        }
+
+        else {
+            cout << "ì •í™•í•œ ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.";
+        }
+
+    
