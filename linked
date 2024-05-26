@@ -1,0 +1,81 @@
+#include "linkedre.hpp"
+#include <iostream>
+#include <string>
+using namespace std;
+
+template<typename T>
+class Node {
+    T data;
+    Node<T>* next = nullptr;
+
+};
+
+template <class T>
+class singleLinkedList {
+public:
+    singleLinkedList(); //빈 리스트 생성
+    ~singleLinkedList();
+    
+    
+    
+    void push();
+    void show();
+    void empty();
+    void front();
+    
+private:
+    Node<T>* head;
+    Node<T>* tail;
+    //StringNode* head;
+};
+template<typename T>
+singleLinkedList::singleLinkedList()
+: head(new Node<T>{-1,nullptr})
+
+void singleLinkedList::push(){
+    Node* newNode = new Node();
+    newNode->T = T;
+    if (head == nulptr){
+        head = newNode;
+        head -> link = nullptr;
+        size++;
+        return ;
+    }
+    else{
+        Node* temp = head;
+        while(temp->link != nullptr){
+            temp = temp -> link;
+        }
+        temp -> link = newNode;
+        newNode -> link = nullptr;
+        size++;
+        return;
+    }
+}
+
+
+singleLinkedList::~singleLinkedList()
+: tali(new Node<T>{-1,nullptr})
+ 
+void singleLinkedList::show(){
+    Node* temp = head;
+    while(temp->link != nullptr){
+        cout<<temp -> val <<endl;
+        temp = temp -> link;
+    }
+    cout << temp->val <<endl;
+}
+
+
+
+int main(){
+    singleLinkedList* idx = new singleLinkedList();
+    idx->push(1);
+    idx->push(2);
+    idx->push(3);
+    idx->push(4);
+    idx->push(5);
+    idx->show();
+    
+}
+
