@@ -35,7 +35,7 @@ singleLinkedList::singleLinkedList()
 void singleLinkedList::push(){
     Node* newNode = new Node();
     newNode->T = T;
-    if (head == nulptr){
+    if (head == nullptr){
         head = newNode;
         head -> link = nullptr;
         size++;
